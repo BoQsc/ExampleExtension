@@ -13,6 +13,7 @@ class Extension {
     constructor() {
         this.button = new PanelButton.Button();
         this.icon = new PanelButton.ButtonIcon();
+        // Add icon inside the button
         this.button.set_child(this.icon);
     }
 
