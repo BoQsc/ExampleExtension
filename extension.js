@@ -5,7 +5,7 @@ const Main = imports.ui.main;
 const ExtensionUtils = imports.misc.extensionUtils;
 const ME = ExtensionUtils.getCurrentExtension();
 
-const ext = ME.imports.PanelButton;
+const PanelButton = ME.imports.PanelButton;
 
 
 class Extension {
@@ -15,8 +15,8 @@ class Extension {
     }
 
     enable() {
-        this.button = new PanelButton();
-        this.icon = new ButtonIcon();
+        this.button = new PanelButton.Button();
+        this.icon = new PanelButton.ButtonIcon();
 
 
         this.button.set_child(this.icon);
