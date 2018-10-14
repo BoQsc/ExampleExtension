@@ -20,6 +20,7 @@ class Extension {
     enable() {
         // Use panel from Main namespace to insert button at the beginning of panel's right box.
         Main.panel._rightBox.insert_child_at_index(this.button, 0);
+        button.connect('button-press-event', PanelButton._showHello);
     }
 
 
