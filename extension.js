@@ -32,5 +32,5 @@ class Extension {
 
 
 function init() {
-    return new ext.Extension();
+    return new Extension();
 }
