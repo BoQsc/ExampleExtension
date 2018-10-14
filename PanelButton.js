@@ -1,4 +1,5 @@
 const St = imports.gi.St;
+const Tweener = imports.ui.tweener;
 
 class Button extends St.Bin {
     constructor() {
