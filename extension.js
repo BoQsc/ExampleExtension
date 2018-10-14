@@ -12,11 +12,10 @@ class Extension {
     constructor() {
         this.button = new PanelButton.Button();
         this.icon = new PanelButton.ButtonIcon();
+        this.button.set_child(this.icon);
     }
 
     enable() {
-
-        this.button.set_child(this.icon);
         // Use panel from Main namespace to insert button at the beginning of panel's right box.
         Main.panel._rightBox.insert_child_at_index(this.button, 0);
     }
