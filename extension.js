@@ -10,8 +10,8 @@ const PanelButton = ME.imports.PanelButton;
 
 class Extension {
     constructor() {
-        this.label = null;
         this.button = null;
+        this.icon = null;
     }
 
     enable() {
