@@ -21,3 +21,32 @@ class ButtonIcon extends St.Icon {
     }
 
 };
+
+function _showHello() {
+    if (!text) {
+        text = new St.Label({ style_class: 'helloworld-label', text: "Hello, world!" });
+        Main.uiGroup.add_actor(text);
+    }
+
+    text.opacity = 255;
+
+    let monitor = Main.layoutManager.primaryMonitor;
+
+    // Calculate center of the monitor for text placement.
+    text.set_position(monitor.x + Math.floor(monitor.width / 2 - text.width / 2),
+                      monitor.y + Math.floor(monitor.height / 2 - text.height / 2));
+
+    
+    // Use Tweener ease out animation to lower opacity in 2 seconds 
+    // and then execute _hideHello to remove text actor from the User Interface
+    Tweener.addTween(text,
+                     { opacity: 0,
+                       time: 2,
+                       transition: 'easeOutQuad',
+                       onComplete: _hideHello });
+}
+
+function _hideHello() {
+    Main.uiGroup.remove_actor(text);
+    text = null;
+}
