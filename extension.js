@@ -10,14 +10,11 @@ const PanelButton = ME.imports.PanelButton;
 
 class Extension {
     constructor() {
-        this.button = null;
-        this.icon = null;
+        this.button = new PanelButton.Button();
+        this.icon = new PanelButton.ButtonIcon();
     }
 
     enable() {
-        this.button = new PanelButton.Button();
-        this.icon = new PanelButton.ButtonIcon();
-
 
         this.button.set_child(this.icon);
         // Use panel from Main namespace to insert button at the beginning of panel's right box.
