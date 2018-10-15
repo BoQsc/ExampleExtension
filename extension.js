@@ -1,35 +1,35 @@
 //Importing Native Modules 
 const ExtensionUtils = imports.misc.extensionUtils;
 const ME = ExtensionUtils.getCurrentExtension();
-
-//Importing Gnome-Shell UI
+const panel = ME.imports.panel;
 const Main = imports.ui.main;
-
-//Importing Custom Project files
-const PanelButton = ME.imports.PanelButton;
 
 
 class Extension {
-    constructor() {
-        this.button = new PanelButton.Button();
-        this.icon = new PanelButton.ButtonIcon();
+constructor() {}
+
+
+ enable() {
+
+        this.button = new panel.Button();
+        this.icon = new panel.ButtonIcon();
         // Add icon inside the button
-        this.button.set_child(this.icon);
-    }
-
-    enable() {
-        // Use panel from Main namespace to insert button at the beginning of panel's right box.
-        Main.panel._rightBox.insert_child_at_index(this.button, 0);
-        this.button.connect('button-press-event', PanelButton._showHello);
-    }
+this.button.set_child(this.icon);
+  panel._showHello();
+this.button.connect('button-press-event', panel._showHello);
+Main.panel._rightBox.insert_child_at_index(this.button, 0);
+ }
 
 
-    disable() {
-        Main.panel._rightBox.remove_child(this.button);
-    }
-};
+ disable() {
+ Main.panel._rightBox.remove_child(this.button);
+ }
 
+}
 
 function init() {
     return new Extension();
 }
+
+
+
