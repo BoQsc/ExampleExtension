@@ -11,8 +11,8 @@ const Main = imports.ui.main;
 
 class Extension {
     constructor() {
-        this.button = new panel.Button();
         global.GnomeTopPanel = Main.panel;
+        this.button = new panel.Button();
     }
 
 
