@@ -2,7 +2,11 @@
 //Importing Native Modules 
 const ExtensionUtils = imports.misc.extensionUtils;
 const ME = ExtensionUtils.getCurrentExtension();
+
+//Importing from current folder
 const panel = ME.imports.PanelButton;
+
+//Importing Gnome UI
 const Main = imports.ui.main;
 
 
