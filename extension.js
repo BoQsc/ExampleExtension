@@ -12,14 +12,14 @@ const Main = imports.ui.main;
 class Extension {
     constructor() {
         this.button = new panel.Button();
-        this.GnomeTopPanel = Main.panel;
+        global.GnomeTopPanel = Main.panel;
     }
 
 
     enable() {
 
 
-        this.GnomeTopPanel._rightBox.insert_child_at_index(this.button, 0)
+        global.GnomeTopPanel._rightBox.insert_child_at_index(this.button, 0)
         panel._showHello();
     }
 
