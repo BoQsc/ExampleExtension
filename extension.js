@@ -9,16 +9,17 @@ const panel = ME.imports.PanelButton;
 //Importing Gnome UI
 const Main = imports.ui.main;
 
-
 class Extension {
-    constructor() {}
+    constructor() {
+        this.button = new panel.Button();
+        this.GnomeTopPanel = Main.panel;
+    }
 
 
     enable() {
 
-        this.button = new panel.Button();
-        let GnomeTopPanel = Main.panel;
-        GnomeTopPanel._rightBox.insert_child_at_index(this.button, 0)
+
+        this.GnomeTopPanel._rightBox.insert_child_at_index(this.button, 0)
         panel._showHello();
     }
 
