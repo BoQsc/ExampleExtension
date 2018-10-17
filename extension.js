@@ -19,13 +19,13 @@ class Extension {
     enable() {
 
 
-        global.GnomeTopPanel._rightBox.insert_child_at_index(this.button, 0)
+        global.GnomeTopPanel._rightBox.insert_child_at_index(this.button, 0);
         panel._showHello();
     }
 
 
     disable() {
-        Main.panel._rightBox.remove_child(this.button);
+        global.GnomeTopPanel._rightBox.remove_child(this.button);
     }
 
 }
